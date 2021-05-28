@@ -6,7 +6,7 @@ var i
 
 module.exports = {
     addUser: (user, callback) => {
-        db.get().collection('user').insertOne(user).then((data) => {
+        db.get().collection(collection.USER_COLLECTION).insertOne(user).then((data) => {
             callback(data.ops[0]._id)
         })
     },

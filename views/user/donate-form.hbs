@@ -1,0 +1,53 @@
+<section>
+    
+    <div class="container col-7 mt-5">
+        <div style="align-items: center;">
+            <div>
+                {{#if err}}
+                <p style="color: crimson; text-align: center;">Blood Grup Must !!!!!!</p>
+                {{/if}}
+            </div>
+            
+             <form action="/donate-blood" method="POST" enctype="multipart/form-data">
+            
+
+
+                <label for="">First Name*</label> <br>
+                <input type="text" name="Name" class="form-control" required><br>
+
+                <label for="">Last Name</label> <br>
+                <input type="text" name="lastname" class="form-control"><br>
+
+
+                <br><br>
+                <label for="">Date Of Birth: </label>
+                <input type="date" class="form-control" name="dob"><br>
+
+                <label for="cars">Blood Grupe:</label>
+                {{#if err}}
+                <p style="color: crimson;">Blood Grup Must !!!!!!</p>
+                {{/if}}
+                <select id="" style="height: 20px;" name="Blood"  required>
+                    <option value="1" >Choos</option>
+                    <option value="A+ve">A +ve</option>
+                    <option value="A-ve">A -ve</option>
+                    <option value="B+ve">B +ve</option>
+                    <option value="B-ve">B -ve</option>
+                    <option value="AB+ve">AB +ve</option>
+                    <option value="AB-ve">AB -ve</option>
+                    <option value="O+ve">O +ve</option>
+                    <option value="O-ve">O -ve</option>
+                </select><br><br>
+                <label for="">Mobile Number</label> <br>
+                <input type="text" name="Mobile" class="form-control " required><br>
+
+
+                
+
+                <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        </div>
+       
+    </div>
+
+</section>

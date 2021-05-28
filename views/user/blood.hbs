@@ -11,8 +11,9 @@
             <div class="row">
 
                 {{#each grups}}
-                <div class="col-md-3 mt-5" style="margin: 30px;" >
-                    <div  style="width: 18rem; height: 15rem; background-color: red; padding-top: 6rem;text-align: center; ">
+                <div class="col-md-3 mt-5" style="margin: 30px;" onclick="location.href='/blood-grupe/{{this.grupe}}';" >
+                    
+                    <div style="width: 18rem; height: 15rem; background-color: red; padding-top: 6rem;text-align: center; " href="/blood-grupe/{{this.grupe}}">
                         <a href="/blood-grupe/{{this.grupe}}" style=" color: white; font-size: 30px;">{{this.grupe}}</a>
                     </div>
 

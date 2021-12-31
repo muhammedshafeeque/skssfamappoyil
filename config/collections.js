@@ -1,3 +1,3 @@
 module.exports={
-    USER_COLLECTION:'skssf'
+    USER_COLLECTION:'skssf'  
 }

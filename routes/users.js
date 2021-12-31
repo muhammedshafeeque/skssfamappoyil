@@ -21,7 +21,7 @@ router.get('/donate', function (req, res) {
 })
 
 router.post('/donate-blood', function (req, res) {
-  console.log(req.body)
+ 
 
   if(req.body.Blood==='1'){
     let err=1
@@ -29,17 +29,14 @@ router.post('/donate-blood', function (req, res) {
 
   }else{
     
-    usersHelper.addUser(req.body, (id) => {
+    usersHelper.addUser(req.body).then(()=> {
     
     res.redirect('/')
   })
 
   }
 
-  usersHelper.addUser(req.body, (id) => {
-    
-    res.redirect('/blood')
-  })
+
 
 })
 

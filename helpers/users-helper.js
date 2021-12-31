@@ -5,10 +5,14 @@ var i
 
 
 module.exports = {
-    addUser: (user, callback) => {
-        db.get().collection(collection.USER_COLLECTION).insertOne(user).then((data) => {
-            callback(data.ops[0]._id)
+    addUser: (user) => {
+
+        return new Promise(async(resolve,reject)=>{
+            await db.get().collection(collection.USER_COLLECTION).insertOne(user)
+            resolve()
+
         })
+        
     },
     fetchData: (data) => {
         

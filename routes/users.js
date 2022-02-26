@@ -3,6 +3,8 @@ var express = require('express');
 const usersHelper = require('../helpers/users-helper');
 const getAge = require("findage");
 var router = express.Router();
+const bcrypt = require ('bcrypt')
+const users = []
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -51,6 +53,15 @@ router.get('/blood-profile/:id', async (req, res) => {
   let usId = req.params.id
   let donar = await usersHelper.fetchUser(usId) 
   res.render('user/donar-profile', { donar })
+
+})
+router.get('/members',async(req,res)=>{
+  let users = await usersHelper.fetchData('O+ve')
+  res.json(users)
+})
+router.post('/check-member',async(req,res)=>{
+  let member=await usersHelper.findMemberShipNumber(req.body)
+  res.json(member)
 
 })
 module.exports = router;

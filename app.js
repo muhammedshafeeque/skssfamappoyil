@@ -8,6 +8,9 @@ var db=require('./config/connection')
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var fileUpload=require('express-fileupload')
+var cors=require('cors')
+const bcrypt = require ('bcrypt')
+const users = []
 
 var app = express();
 
@@ -28,6 +31,7 @@ db.connect((err)=>{
   if(err) console.log("connection Error"+err)
   else console.log('connected To Database')
 })
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
